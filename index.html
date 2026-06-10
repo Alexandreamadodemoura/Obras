@@ -9,9 +9,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', system-ui, sans-serif; background: #020617; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; }
 
-    /* Header */
     header { background: rgba(15,23,42,0.95); border-bottom: 1px solid #1e293b; position: sticky; top: 0; backdrop-filter: blur(12px); z-index: 100; }
-    .header-inner { max-width: 1150px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     .logo { display: flex; align-items: center; gap: 12px; }
     .logo-icon { padding: 9px; background: rgba(220,38,38,0.15); color: #f87171; border-radius: 10px; border: 1px solid rgba(239,68,68,0.3); display: flex; }
     .logo-title { font-size: 1rem; font-weight: 800; color: #fff; }
@@ -20,23 +19,19 @@
     .pulse { width: 9px; height: 9px; background: #ef4444; border-radius: 50%; animation: pulse 2s infinite; flex-shrink:0; }
     @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.35} }
 
-    /* Nav tabs */
     .nav-tabs { background: #0a1120; border-bottom: 1px solid #1e293b; }
-    .nav-tabs-inner { max-width: 1150px; margin: 0 auto; padding: 0 20px; display: flex; gap: 0; }
-    .nav-tab { padding: 11px 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; color: #475569; border-bottom: 2px solid transparent; background: none; border-top: none; border-left: none; border-right: none; transition: all .2s; white-space: nowrap; }
+    .nav-tabs-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 0; overflow-x: auto; }
+    .nav-tab { padding: 11px 18px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; cursor: pointer; color: #475569; border-bottom: 2px solid transparent; background: none; border-top:none; border-left:none; border-right:none; transition: all .2s; white-space: nowrap; }
     .nav-tab.active { color: #fff; border-bottom-color: #ef4444; }
     .nav-tab:hover:not(.active) { color: #94a3b8; }
 
-    /* Pages */
-    .page { display: none; max-width: 1150px; margin: 0 auto; padding: 20px; width: 100%; flex: 1; }
+    .page { display: none; max-width: 1200px; margin: 0 auto; padding: 20px; width: 100%; flex: 1; }
     .page.active { display: block; }
 
-    /* Cards */
     .card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
     .section-label { font-size: 0.62rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
     .step-badge { width: 20px; height: 20px; border-radius: 50%; background: rgba(220,38,38,0.2); color: #f87171; font-size: 0.58rem; font-weight: 900; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(239,68,68,0.3); flex-shrink:0; }
 
-    /* Grid layouts */
     .main-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 20px; }
     .left-col { display: flex; flex-direction: column; gap: 16px; }
     .right-col { display: flex; flex-direction: column; gap: 16px; }
@@ -44,36 +39,28 @@
     .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
     @media(max-width:820px){ .main-grid{grid-template-columns:1fr;} }
 
-    /* Inputs */
     label { display: block; font-size: 0.6rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; }
     .row { display: flex; align-items: center; gap: 10px; }
     input[type=range] { flex: 1; accent-color: #ef4444; cursor: pointer; }
-    input[type=number], select {
-      background: #020617; border: 1px solid #1e293b; border-radius: 7px;
-      padding: 7px 8px; color: #fff; font-weight: 600;
-      font-family: 'Courier New', monospace; font-size: 0.82rem;
-      outline: none; transition: border-color .2s; text-align: center; width: 100%;
-    }
+    input[type=number], select { background: #020617; border: 1px solid #1e293b; border-radius: 7px; padding: 7px 8px; color: #fff; font-weight: 600; font-family: 'Courier New', monospace; font-size: 0.82rem; outline: none; transition: border-color .2s; text-align: center; width: 100%; }
     input[type=number]:focus, select:focus { border-color: #ef4444; }
     input[type=number].narrow { width: 78px; }
     .hint { font-size: 0.58rem; color: #475569; font-weight: 600; margin-top: 4px; }
     .space { margin-bottom: 12px; }
 
-    /* KPI row — 5 cards */
-    .kpi-row { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+    .kpi-row5 { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 8px; align-items: center; }
+    .kpi-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .kpi { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 10px 12px; }
-    .kpi.highlight { border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.06); }
+    .kpi.hl { border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.06); }
     .kpi-label { font-size: 0.56rem; color: #475569; font-weight: 900; text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.4; }
     .kpi-val { font-size: 0.82rem; font-weight: 900; font-family: monospace; margin-top: 4px; }
     .kpi-unit { font-size: 0.62rem; color: #64748b; font-weight: 400; font-family: sans-serif; }
-    .kpi-divider { display: flex; align-items: center; justify-content: center; color: #334155; font-size: 1.2rem; font-weight: 300; }
+    .kpi-op { color: #334155; font-size: 1.3rem; font-weight: 300; text-align: center; }
 
-    /* Alert */
     #alert-box { background: rgba(120,53,15,0.2); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 12px 14px; display: none; }
     .alert-title { display: flex; align-items: center; gap: 8px; color: #fbbf24; font-weight: 700; font-size: 0.75rem; margin-bottom: 6px; }
     #alert-text { font-size: 0.68rem; color: rgba(254,243,199,0.85); line-height: 1.7; font-weight: 600; }
 
-    /* Diagram */
     .diagram-wrap { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px; }
     .diagram-title { font-size: 0.62rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 10px; }
     svg.beam { width: 100%; height: auto; background: rgba(2,6,23,0.5); border-radius: 8px; border: 1px solid #1e293b; }
@@ -82,10 +69,9 @@
     .det-val { font-size: 0.7rem; font-weight: 900; margin-top: 3px; font-family: monospace; }
     .det-sub { font-size: 0.56rem; color: #475569; }
 
-    /* Inner tabs (memorial/checklist) */
     .inner-tabs { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; overflow: hidden; }
     .inner-tab-bar { display: flex; border-bottom: 1px solid #1e293b; }
-    .inner-tab-btn { flex: 1; padding: 11px; text-align: center; font-size: 0.64rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.07em; cursor: pointer; border-bottom: 2px solid transparent; color: #64748b; background: none; border-top: none; border-left: none; border-right: none; transition: all .2s; }
+    .inner-tab-btn { flex: 1; padding: 11px; text-align: center; font-size: 0.63rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.07em; cursor: pointer; border-bottom: 2px solid transparent; color: #64748b; background: none; border-top:none; border-left:none; border-right:none; transition: all .2s; }
     .inner-tab-btn.active { border-bottom-color: #ef4444; color: #fff; }
     .inner-tab-content { padding: 18px; }
     .inner-pane { display: none; }
@@ -97,35 +83,97 @@
     .eq-formula { font-size: 0.82rem; color: #fff; }
     .check-item { display: flex; gap: 10px; background: #020617; padding: 11px; border-radius: 8px; border: 1px solid #1e293b; margin-bottom: 9px; }
     .check-item input[type=checkbox] { width: 16px; height: 16px; margin-top: 2px; accent-color: #ef4444; cursor: pointer; flex-shrink:0; }
-    .check-item .ci-title { font-size: 0.72rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
-    .check-item .ci-desc { font-size: 0.65rem; color: #94a3b8; line-height: 1.55; }
+    .ci-title { font-size: 0.72rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .ci-desc { font-size: 0.65rem; color: #94a3b8; line-height: 1.55; }
+
+    /* ── STEEL PAGE ── */
+    .steel-header { background: linear-gradient(135deg, rgba(100,116,139,0.15) 0%, rgba(148,163,184,0.08) 100%); border: 1px solid rgba(100,116,139,0.3); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+    .steel-header-icon { font-size: 2.2rem; }
+    .steel-header-title { font-size: 1rem; font-weight: 800; color: #e2e8f0; }
+    .steel-header-sub { font-size: 0.68rem; color: #64748b; margin-top: 3px; line-height: 1.5; }
+    .steel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media(max-width:800px){ .steel-grid{grid-template-columns:1fr;} }
+
+    /* Demand card */
+    .demand-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px; }
+    .demand-title { font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.09em; color: #64748b; margin-bottom: 14px; display:flex; align-items:center; gap:8px; }
+    .demand-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .demand-kpi { background: #020617; border: 1px solid #1e293b; border-radius: 9px; padding: 10px 12px; }
+    .demand-kpi-label { font-size: 0.56rem; color: #475569; font-weight: 900; text-transform: uppercase; }
+    .demand-kpi-val { font-size: 1rem; font-weight: 900; font-family: monospace; margin-top: 3px; }
+
+    /* Steel selector */
+    .steel-selector { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px; }
+    .steel-sel-row { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+    .steel-sel-row select { flex: 1; min-width: 140px; }
+    .steel-sel-row label { white-space: nowrap; }
+
+    /* Profile result */
+    .profile-result { background: #020617; border: 1px solid #1e293b; border-radius: 10px; overflow: hidden; }
+    .profile-result-header { padding: 10px 14px; display:flex; align-items:center; justify-content:space-between; border-bottom: 1px solid #1e293b; }
+    .profile-name { font-size: 1.1rem; font-weight: 900; font-family: monospace; }
+    .profile-status { font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; }
+    .status-ok { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .status-fail { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+    .profile-props { display: grid; grid-template-columns: repeat(3,1fr); padding: 12px 14px; gap: 10px; border-bottom: 1px solid #1e293b; }
+    .prop-item { text-align: center; }
+    .prop-label { font-size: 0.55rem; color: #475569; font-weight: 900; text-transform: uppercase; }
+    .prop-val { font-size: 0.78rem; font-weight: 900; font-family: monospace; color: #e2e8f0; margin-top: 2px; }
+
+    /* Utilization bar */
+    .util-wrap { padding: 12px 14px; }
+    .util-label { display:flex; justify-content:space-between; font-size:0.62rem; font-weight:700; color:#64748b; margin-bottom:6px; }
+    .util-bar-bg { background: #0f172a; border-radius: 99px; height: 10px; overflow: hidden; border: 1px solid #1e293b; }
+    .util-bar-fill { height: 100%; border-radius: 99px; transition: width .6s cubic-bezier(.4,0,.2,1), background .4s; }
+
+    /* Profile table */
+    .profile-table-wrap { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; overflow: hidden; }
+    .pt-title { padding: 14px 18px; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.09em; color: #64748b; border-bottom: 1px solid #1e293b; display:flex; align-items:center; gap:8px; }
+    table.pt { width: 100%; border-collapse: collapse; font-size: 0.68rem; }
+    table.pt thead tr { background: #020617; }
+    table.pt thead th { padding: 9px 12px; text-align: center; font-size: 0.58rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.07em; color: #475569; border-bottom: 1px solid #1e293b; white-space: nowrap; }
+    table.pt tbody tr { border-bottom: 1px solid rgba(30,41,59,0.6); transition: background .15s; cursor: pointer; }
+    table.pt tbody tr:hover { background: rgba(30,41,59,0.5); }
+    table.pt tbody tr.selected { background: rgba(239,68,68,0.08); border-left: 2px solid #ef4444; }
+    table.pt tbody tr.suitable { }
+    table.pt tbody tr.unsuitable { opacity: 0.4; }
+    table.pt tbody td { padding: 8px 12px; text-align: center; font-family: monospace; color: #cbd5e1; }
+    table.pt tbody td:first-child { font-weight: 800; color: #fff; text-align: left; font-family: sans-serif; font-size: 0.7rem; }
+    .chip { font-size: 0.6rem; padding: 2px 7px; border-radius: 5px; font-weight: 800; font-family: sans-serif; }
+    .chip-ok { background: rgba(34,197,94,0.12); color: #4ade80; }
+    .chip-no { background: rgba(239,68,68,0.12); color: #f87171; }
+
+    /* SVG I-beam */
+    .ibeam-svg-wrap { display: flex; justify-content: center; padding: 14px; background: #020617; border-top: 1px solid #1e293b; }
+
+    /* Norm reference */
+    .norm-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.2); border-radius: 10px; padding: 14px 16px; margin-top: 18px; }
+    .norm-box-title { font-size: 0.65rem; font-weight: 900; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+    .norm-box p { font-size: 0.68rem; color: #94a3b8; line-height: 1.65; }
+    .norm-box strong { color: #e2e8f0; }
 
     /* ── CARGAS PAGE ── */
-    .cargas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .cargas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
     .carga-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; overflow: hidden; }
-    .carga-card-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1e293b; }
-    .carga-card-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink:0; }
-    .carga-card-title { font-size: 0.78rem; font-weight: 800; color: #fff; }
-    .carga-card-subtitle { font-size: 0.6rem; color: #64748b; font-weight: 600; margin-top: 1px; }
-    .carga-card-body { padding: 0; }
-    .carga-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 16px; border-bottom: 1px solid rgba(30,41,59,0.6); gap: 8px; }
+    .carga-card-header { padding: 11px 15px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #1e293b; }
+    .carga-card-icon { width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink:0; }
+    .carga-card-title { font-size: 0.75rem; font-weight: 800; color: #fff; }
+    .carga-card-subtitle { font-size: 0.58rem; color: #64748b; font-weight: 600; margin-top: 1px; }
+    .carga-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 15px; border-bottom: 1px solid rgba(30,41,59,0.5); gap: 8px; }
     .carga-row:last-child { border-bottom: none; }
-    .carga-name { font-size: 0.68rem; color: #cbd5e1; font-weight: 600; flex: 1; }
-    .carga-nbr { font-size: 0.58rem; color: #475569; font-weight: 600; margin-right: 8px; white-space: nowrap; }
-    .carga-val { font-size: 0.72rem; font-weight: 900; font-family: monospace; white-space: nowrap; padding: 3px 8px; border-radius: 5px; }
-    .chip-green { background: rgba(34,197,94,0.12); color: #4ade80; }
-    .chip-blue { background: rgba(56,189,248,0.12); color: #38bdf8; }
-    .chip-amber { background: rgba(251,191,36,0.12); color: #fbbf24; }
-    .chip-red { background: rgba(239,68,68,0.12); color: #f87171; }
-    .chip-purple { background: rgba(168,85,247,0.12); color: #c084fc; }
-    .chip-orange { background: rgba(251,146,60,0.12); color: #fb923c; }
-    .cargas-intro { background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.2); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; font-size: 0.7rem; color: #94a3b8; line-height: 1.6; }
-    .cargas-intro strong { color: #38bdf8; }
-    .cargas-section-title { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; color: #475569; margin-bottom: 10px; margin-top: 20px; display: flex; align-items: center; gap: 8px; }
-    .cargas-section-title:first-of-type { margin-top: 0; }
-    .cargas-section-title::after { content:''; flex:1; height:1px; background:#1e293b; }
+    .carga-name { font-size: 0.66rem; color: #cbd5e1; font-weight: 600; flex: 1; }
+    .carga-nbr { font-size: 0.56rem; color: #475569; font-weight: 600; margin-right: 6px; white-space: nowrap; }
+    .carga-val { font-size: 0.7rem; font-weight: 900; font-family: monospace; white-space: nowrap; padding: 2px 7px; border-radius: 5px; }
+    .chip-green { background:rgba(34,197,94,.12);color:#4ade80; } .chip-blue{background:rgba(56,189,248,.12);color:#38bdf8;}
+    .chip-amber{background:rgba(251,191,36,.12);color:#fbbf24;} .chip-red{background:rgba(239,68,68,.12);color:#f87171;}
+    .chip-purple{background:rgba(168,85,247,.12);color:#c084fc;} .chip-orange{background:rgba(251,146,60,.12);color:#fb923c;}
+    .cargas-intro { background:rgba(56,189,248,.05);border:1px solid rgba(56,189,248,.2);border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:.7rem;color:#94a3b8;line-height:1.6; }
+    .cargas-intro strong { color:#38bdf8; }
+    .cargas-section-title { font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#475569;margin-bottom:10px;margin-top:20px;display:flex;align-items:center;gap:8px; }
+    .cargas-section-title:first-of-type{margin-top:0;}
+    .cargas-section-title::after{content:'';flex:1;height:1px;background:#1e293b;}
 
-    footer { background: #020617; border-top: 1px solid #0f172a; padding: 12px; text-align: center; font-size: 0.65rem; color: #334155; margin-top: auto; }
+    footer { background:#020617;border-top:1px solid #0f172a;padding:12px;text-align:center;font-size:.65rem;color:#334155;margin-top:auto; }
   </style>
 </head>
 <body>
@@ -141,44 +189,34 @@
         <div class="logo-sub">Prof. Dr. Alexandre Moura</div>
       </div>
     </div>
-    <div class="badge"><div class="pulse"></div> Dimensionamento Integrado — NBR 6118</div>
+    <div class="badge"><div class="pulse"></div> NBR 6118 · NBR 8800 · NBR 7007</div>
   </div>
 </header>
 
-<!-- Nav -->
 <div class="nav-tabs">
   <div class="nav-tabs-inner">
-    <button class="nav-tab active" onclick="showPage('calc', this)">⚙️ Dimensionamento</button>
-    <button class="nav-tab" onclick="showPage('cargas', this)">📋 Tabela de Cargas NBR</button>
+    <button class="nav-tab active" onclick="showPage('calc',this)">⚙️ Dimensionamento CA</button>
+    <button class="nav-tab" onclick="showPage('steel',this)">🔩 Perfil Metálico (Aço)</button>
+    <button class="nav-tab" onclick="showPage('cargas',this)">📋 Tabela de Cargas NBR</button>
   </div>
 </div>
 
-<!-- ══════════ PAGE 1: DIMENSIONAMENTO ══════════ -->
+<!-- ══ PAGE 1: DIMENSIONAMENTO ══ -->
 <div class="page active" id="page-calc">
   <div class="main-grid">
-
-    <!-- LEFT -->
     <div class="left-col">
-
       <div class="card">
         <div class="section-label"><div class="step-badge">1</div> Vão Livre e Carregamento</div>
         <div class="space">
           <label>Vão Teórico — L (m)</label>
-          <div class="row">
-            <input type="range" id="slider-L" min="2" max="10" step="0.1" value="5">
-            <input type="number" id="input-L" class="narrow" value="5.0" step="0.1">
-          </div>
+          <div class="row"><input type="range" id="slider-L" min="2" max="10" step="0.1" value="5"><input type="number" id="input-L" class="narrow" value="5.0" step="0.1"></div>
         </div>
         <div>
           <label>Carga Adicional — q<sub>k</sub> (kN/m)</label>
-          <div class="row">
-            <input type="range" id="slider-q" min="0" max="80" step="0.5" value="20">
-            <input type="number" id="input-q" class="narrow" value="20" step="0.5">
-          </div>
-          <div class="hint">Cargas acidentais, permanentes adicionais, paredes, pisos, etc.</div>
+          <div class="row"><input type="range" id="slider-q" min="0" max="80" step="0.5" value="20"><input type="number" id="input-q" class="narrow" value="20" step="0.5"></div>
+          <div class="hint">Cargas acidentais, permanentes adicionais, paredes, pisos etc.</div>
         </div>
       </div>
-
       <div class="card">
         <div class="section-label"><div class="step-badge">2</div> Seção Transversal de Concreto</div>
         <div class="grid3">
@@ -186,85 +224,46 @@
           <div><label>Altura h (cm)</label><input type="number" id="input-h" value="50" step="5"></div>
           <div><label>Cobrimento c (cm)</label><input type="number" id="input-cnom" value="2.5" step="0.5"></div>
         </div>
-        <!-- Peso próprio destaque -->
-        <div style="margin-top:12px; background:#020617; border:1px solid #1e293b; border-radius:8px; padding:10px 14px; display:flex; align-items:center; justify-content:space-between;">
-          <div>
-            <div style="font-size:0.6rem;color:#475569;font-weight:900;text-transform:uppercase;letter-spacing:.07em;">Peso Próprio Calculado</div>
-            <div style="font-size:0.62rem;color:#64748b;margin-top:2px;">bw × h × 25 kN/m³</div>
-          </div>
-          <div style="text-align:right;">
-            <div id="pp-display" style="font-size:1rem;font-weight:900;font-family:monospace;color:#4ade80;">--</div>
-            <div style="font-size:0.6rem;color:#475569;">kN/m</div>
-          </div>
+        <div style="margin-top:12px;background:#020617;border:1px solid #1e293b;border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;">
+          <div><div style="font-size:.6rem;color:#475569;font-weight:900;text-transform:uppercase;letter-spacing:.07em;">Peso Próprio Calculado</div><div style="font-size:.62rem;color:#64748b;margin-top:2px;">bw × h × 25 kN/m³</div></div>
+          <div style="text-align:right;"><div id="pp-display" style="font-size:1rem;font-weight:900;font-family:monospace;color:#4ade80;">--</div><div style="font-size:.6rem;color:#475569;">kN/m</div></div>
         </div>
       </div>
-
       <div class="card">
         <div class="section-label"><div class="step-badge">3</div> Resistências de Cálculo NBR</div>
         <div class="grid2">
-          <div>
-            <label>Concreto f<sub>ck</sub> (MPa)</label>
+          <div><label>Concreto f<sub>ck</sub> (MPa)</label>
             <select id="input-fck">
-              <option value="20">C20 — 20 MPa</option>
-              <option value="25" selected>C25 — 25 MPa</option>
-              <option value="30">C30 — 30 MPa</option>
-              <option value="35">C35 — 35 MPa</option>
-              <option value="40">C40 — 40 MPa</option>
-              <option value="50">C50 — 50 MPa</option>
+              <option value="20">C20 — 20 MPa</option><option value="25" selected>C25 — 25 MPa</option>
+              <option value="30">C30 — 30 MPa</option><option value="35">C35 — 35 MPa</option>
+              <option value="40">C40 — 40 MPa</option><option value="50">C50 — 50 MPa</option>
             </select>
           </div>
-          <div>
-            <label>Estribos Aço f<sub>ywk</sub></label>
+          <div><label>Estribos Aço f<sub>ywk</sub></label>
             <select id="input-fyk-shear">
-              <option value="500">CA-50 — 500 MPa</option>
-              <option value="600" selected>CA-60 — 600 MPa</option>
+              <option value="500">CA-50 — 500 MPa</option><option value="600" selected>CA-60 — 600 MPa</option>
             </select>
           </div>
         </div>
       </div>
-
       <div id="alert-box">
-        <div class="alert-title">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Alertas Ativos de Verificação NBR
-        </div>
+        <div class="alert-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Alertas Ativos de Verificação NBR</div>
         <div id="alert-text"></div>
       </div>
+    </div>
 
-    </div><!-- /left -->
-
-    <!-- RIGHT -->
     <div class="right-col">
-
-      <!-- 5 KPI cards -->
-      <div class="kpi-row">
-        <div class="kpi">
-          <div class="kpi-label">Peso Próprio g<sub>pp</sub></div>
-          <div class="kpi-val" style="color:#4ade80" id="kpi-pp">-- <span class="kpi-unit">kN/m</span></div>
-        </div>
-        <div class="kpi-divider">+</div>
-        <div class="kpi">
-          <div class="kpi-label">Carga Adicional q<sub>k</sub></div>
-          <div class="kpi-val" style="color:#fb923c" id="kpi-qk">-- <span class="kpi-unit">kN/m</span></div>
-        </div>
-        <div class="kpi-divider">=</div>
-        <div class="kpi highlight">
-          <div class="kpi-label">Carga de Projeto q<sub>d</sub> (×1,4)</div>
-          <div class="kpi-val" style="color:#f87171" id="kpi-qd">-- <span class="kpi-unit">kN/m</span></div>
-        </div>
+      <div class="kpi-row5">
+        <div class="kpi"><div class="kpi-label">Peso Próprio g<sub>pp</sub></div><div class="kpi-val" style="color:#4ade80" id="kpi-pp">-- <span class="kpi-unit">kN/m</span></div></div>
+        <div class="kpi-op">+</div>
+        <div class="kpi"><div class="kpi-label">Carga Adicional q<sub>k</sub></div><div class="kpi-val" style="color:#fb923c" id="kpi-qk">-- <span class="kpi-unit">kN/m</span></div></div>
+        <div class="kpi-op">=</div>
+        <div class="kpi hl"><div class="kpi-label">Carga de Projeto q<sub>d</sub> (×1,4)</div><div class="kpi-val" style="color:#f87171" id="kpi-qd">-- <span class="kpi-unit">kN/m</span></div></div>
       </div>
-      <div class="kpi-row" style="grid-template-columns:1fr 1fr;">
-        <div class="kpi">
-          <div class="kpi-label">Momento Fletor M<sub>Sd</sub></div>
-          <div class="kpi-val" style="color:#f87171" id="res-msd">-- <span class="kpi-unit">kNm</span></div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Força Cortante V<sub>Sd</sub></div>
-          <div class="kpi-val" style="color:#38bdf8" id="res-vsd">-- <span class="kpi-unit">kN</span></div>
-        </div>
+      <div class="kpi-row2">
+        <div class="kpi"><div class="kpi-label">Momento Fletor M<sub>Sd</sub></div><div class="kpi-val" style="color:#f87171" id="res-msd">-- <span class="kpi-unit">kNm</span></div></div>
+        <div class="kpi"><div class="kpi-label">Força Cortante V<sub>Sd</sub></div><div class="kpi-val" style="color:#38bdf8" id="res-vsd">-- <span class="kpi-unit">kN</span></div></div>
       </div>
-
-      <!-- Diagram -->
       <div class="diagram-wrap">
         <div class="diagram-title">Esquema Longitudinal da Armação</div>
         <svg class="beam" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
@@ -291,12 +290,10 @@
         <div class="det-row">
           <div><div class="det-label">Tração (Inf)</div><div class="det-val" id="det-inf" style="color:#f87171">--</div><div class="det-sub">Long. Principal</div></div>
           <div><div class="det-label">Porta-Estribo</div><div class="det-val" id="det-sup" style="color:#4ade80">--</div><div class="det-sub">Armadura Mont.</div></div>
-          <div><div class="det-label">Armadura Pele</div><div class="det-val" id="det-pele" style="color:#fb923c">--</div><div class="det-sub">h &gt; 60cm</div></div>
+          <div><div class="det-label">Arm. Pele</div><div class="det-val" id="det-pele" style="color:#fb923c">--</div><div class="det-sub">h &gt; 60cm</div></div>
           <div><div class="det-label">Estribos</div><div class="det-val" id="det-estribo" style="color:#38bdf8">--</div><div class="det-sub">Cisalh. Modelo I</div></div>
         </div>
       </div>
-
-      <!-- Inner tabs -->
       <div class="inner-tabs">
         <div class="inner-tab-bar">
           <button class="inner-tab-btn active" onclick="switchInner('memorial',this)">Memorial Ativo NBR</button>
@@ -306,170 +303,257 @@
           <div class="inner-pane active" id="pane-memorial">
             <div class="mem-title"><div class="mem-accent" style="background:#ef4444"></div> Roteiro de Equações Seccionais Dinâmicas</div>
             <div class="eq-block"><div class="eq-comment">// 1. Peso Próprio e Carga Total de Projeto</div><div class="eq-formula" id="eq-pp">\( q_d = 1{,}4 \cdot (q_k + g_{pp}) \)</div></div>
-            <div class="eq-block"><div class="eq-comment">// 2. Esforços Solicitantes (Vão Simplesmente Apoiado)</div><div class="eq-formula" id="eq-esforcos">\( M_{Sd} = \frac{q_d \cdot L^2}{8} \quad ; \quad V_{Sd} = \frac{q_d \cdot L}{2} \)</div></div>
-            <div class="eq-block"><div class="eq-comment">// 3. Linha Neutra e Ductilidade — Domínios 2 e 3</div><div class="eq-formula" id="eq-xi">\( \mu = \frac{M_{Sd}}{b \cdot d^2 \cdot f_{cd}} \rightarrow \xi = 1 - \sqrt{1 - 2\mu} \)</div></div>
-            <div class="eq-block"><div class="eq-comment">// 4. Área de Aço Longitudinal de Tração</div><div class="eq-formula" id="eq-as">\( A_s = \frac{M_{Sd}}{f_{yd} \cdot z} \quad ; \quad z = d \cdot (1 - 0{,}4\xi) \)</div></div>
-            <div class="eq-block"><div class="eq-comment">// 5. Verificação da Biela e Armadura Transversal</div><div class="eq-formula" id="eq-sw">\( V_{Rd2} = 0{,}27 \cdot \alpha_{v2} \cdot f_{cd} \cdot b_w \cdot d \quad ; \quad V_{sw} = V_{Sd} - V_c \)</div></div>
+            <div class="eq-block"><div class="eq-comment">// 2. Esforços Solicitantes</div><div class="eq-formula" id="eq-esforcos">\( M_{Sd} = \frac{q_d \cdot L^2}{8} \quad ; \quad V_{Sd} = \frac{q_d \cdot L}{2} \)</div></div>
+            <div class="eq-block"><div class="eq-comment">// 3. Linha Neutra e Ductilidade</div><div class="eq-formula" id="eq-xi">\( \mu = \frac{M_{Sd}}{b \cdot d^2 \cdot f_{cd}} \rightarrow \xi = 1 - \sqrt{1 - 2\mu} \)</div></div>
+            <div class="eq-block"><div class="eq-comment">// 4. Área de Aço Longitudinal</div><div class="eq-formula" id="eq-as">\( A_s = \frac{M_{Sd}}{f_{yd} \cdot z} \quad ; \quad z = d \cdot (1 - 0{,}4\xi) \)</div></div>
+            <div class="eq-block"><div class="eq-comment">// 5. Biela de Concreto e Estribos</div><div class="eq-formula" id="eq-sw">\( V_{Rd2} = 0{,}27 \cdot \alpha_{v2} \cdot f_{cd} \cdot b_w \cdot d \quad ; \quad V_{sw} = V_{Sd} - V_c \)</div></div>
           </div>
           <div class="inner-pane" id="pane-checklist">
             <div class="mem-title"><div class="mem-accent" style="background:#22c55e"></div> Checklist de Inspeção e Execução (NBR 6118)</div>
-            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Espaçamento de Estribos Próximos aos Apoios</p><p class="ci-desc">Verifique o espaçamento de projeto na face interna de apoio dos pilares, onde V_Sd atinge seu valor máximo.</p></div></div>
-            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Cobrimento Lateral das Armaduras</p><p class="ci-desc">Para CAA II, cobrimento mínimo de 2,5 cm com distanciadores plásticos. Evita corrosão por carbonatação.</p></div></div>
-            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Armadura de Pele (h &gt; 60 cm)</p><p class="ci-desc">Barras horizontais intermediárias de cada lado da alma para controle de fissuração por retração térmica.</p></div></div>
-            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Porta-Estribos e Armaduras de Montagem</p><p class="ci-desc">Barras superiores devem possuir diâmetro mínimo condizente com a bitola do estribo adotado.</p></div></div>
+            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Espaçamento de Estribos Próximos aos Apoios</p><p class="ci-desc">Verifique o espaçamento na face interna de apoio dos pilares, onde V_Sd é máximo.</p></div></div>
+            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Cobrimento Lateral das Armaduras</p><p class="ci-desc">CAA II: cobrimento mínimo de 2,5 cm com distanciadores plásticos contra carbonatação.</p></div></div>
+            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Armadura de Pele (h &gt; 60 cm)</p><p class="ci-desc">Barras horizontais intermediárias de cada lado da alma para controle de fissuração por retração.</p></div></div>
+            <div class="check-item"><input type="checkbox"><div><p class="ci-title">Porta-Estribos e Armaduras de Montagem</p><p class="ci-desc">Diâmetro mínimo das barras superiores deve ser condizente com a bitola do estribo adotado.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE 2: PERFIL METÁLICO ══ -->
+<div class="page" id="page-steel">
+
+  <div class="steel-header">
+    <div class="steel-header-icon">🔩</div>
+    <div>
+      <div class="steel-header-title">Alternativa em Perfil Metálico — Viga I Laminada</div>
+      <div class="steel-header-sub">Dimensionamento conforme <strong>ABNT NBR 8800:2008</strong> (Projeto de Estruturas de Aço) e especificação do aço conforme <strong>ABNT NBR 7007:2011</strong>. Os esforços são os mesmos calculados na aba de dimensionamento (M<sub>Sd</sub> e V<sub>Sd</sub>).</div>
+    </div>
+  </div>
+
+  <div class="steel-grid">
+
+    <!-- Left: demand + selector -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+
+      <div class="demand-card">
+        <div class="demand-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Esforços Solicitantes da Viga (do Dimensionamento CA)
+        </div>
+        <div class="demand-kpi-grid">
+          <div class="demand-kpi"><div class="demand-kpi-label">Momento Fletor M<sub>Sd</sub></div><div class="demand-kpi-val" style="color:#f87171" id="st-msd">-- kNm</div></div>
+          <div class="demand-kpi"><div class="demand-kpi-label">Força Cortante V<sub>Sd</sub></div><div class="demand-kpi-val" style="color:#38bdf8" id="st-vsd">-- kN</div></div>
+          <div class="demand-kpi"><div class="demand-kpi-label">Módulo Plástico Mínimo W<sub>pl,req</sub></div><div class="demand-kpi-val" style="color:#fbbf24" id="st-wpl">-- cm³</div></div>
+          <div class="demand-kpi"><div class="demand-kpi-label">Vão Livre L</div><div class="demand-kpi-val" style="color:#94a3b8" id="st-L">-- m</div></div>
+        </div>
+        <div style="font-size:.62rem;color:#475569;line-height:1.6;padding:8px 0 0 0;">
+          Ajuste o vão e as cargas na aba <strong style="color:#e2e8f0;">Dimensionamento CA</strong> — os esforços aqui são atualizados automaticamente.
+        </div>
+      </div>
+
+      <div class="steel-selector">
+        <div class="demand-title" style="margin-bottom:12px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#94a3b8" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          Parâmetros do Aço
+        </div>
+        <div class="steel-sel-row">
+          <div style="flex:1"><label>Grau do Aço (NBR 7007)</label>
+            <select id="st-grade" onchange="updateSteel()">
+              <option value="250">ASTM A36 / MR 250 — fy = 250 MPa</option>
+              <option value="300" selected>VSM 300 / MR 300 — fy = 300 MPa</option>
+              <option value="350">AR 350 — fy = 350 MPa</option>
+              <option value="400">AR 400 — fy = 400 MPa</option>
+            </select>
+          </div>
+        </div>
+        <div style="font-size:.62rem;line-height:1.65;color:#475569;margin-top:8px;">
+          Coeficiente de ponderação <strong style="color:#e2e8f0;">γa₁ = 1,10</strong> (ELU, NBR 8800 Tab. 1). Resistência de cálculo: <strong style="color:#fbbf24;" id="st-fyd-display">-- MPa</strong>.
+        </div>
+      </div>
+
+      <!-- I-beam SVG schematic -->
+      <div class="demand-card" style="padding:14px;">
+        <div class="demand-title" style="margin-bottom:10px;">Croqui Seção Transversal — Perfil I Selecionado</div>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <svg id="ibeam-svg" viewBox="0 0 120 160" width="100" height="130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Mesa superior -->
+            <rect id="isv-tf-top" x="10" y="10" width="100" height="16" rx="2" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+            <!-- Alma -->
+            <rect id="isv-web" x="52" y="26" width="16" height="100" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+            <!-- Mesa inferior -->
+            <rect id="isv-tf-bot" x="10" y="126" width="100" height="16" rx="2" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text x="60" y="8" fill="#475569" font-size="8" text-anchor="middle">bf</text>
+            <text x="8" y="76" fill="#475569" font-size="8" text-anchor="end">h</text>
+            <line x1="9" y1="10" x2="9" y2="142" stroke="#334155" stroke-width="1" stroke-dasharray="3,2"/>
+          </svg>
+          <div style="flex:1">
+            <div style="font-size:.62rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Perfil Selecionado</div>
+            <div id="ibeam-profile-name" style="font-size:1.2rem;font-weight:900;font-family:monospace;color:#e2e8f0;">--</div>
+            <div id="ibeam-dims" style="font-size:.65rem;color:#64748b;margin-top:4px;line-height:1.6;">Clique em um perfil na tabela</div>
           </div>
         </div>
       </div>
 
-    </div><!-- /right -->
-  </div><!-- /main-grid -->
-</div><!-- /page-calc -->
+    </div>
 
+    <!-- Right: result + table -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
 
-<!-- ══════════ PAGE 2: TABELA DE CARGAS NBR ══════════ -->
-<div class="page" id="page-cargas">
-  <div class="cargas-intro">
-    <strong>Referência de Cargas — NBR 6120:2019 e NBR 6118:2014.</strong> Use esta tabela para compor a carga adicional q_k no dimensionamento. Os valores são característicos (sem majoração). Aplique γf = 1,4 para cargas permanentes e γf = 1,4 a 1,6 para acidentais conforme NBR 6118 Tab. 1.
+      <!-- Profile verification result -->
+      <div class="profile-result" id="profile-result-box">
+        <div class="profile-result-header">
+          <div>
+            <div style="font-size:.58rem;color:#475569;font-weight:900;text-transform:uppercase;margin-bottom:2px;">Perfil em Análise</div>
+            <div class="profile-name" id="pr-name" style="color:#94a3b8">Selecione um perfil →</div>
+          </div>
+          <div id="pr-status" class="profile-status status-ok" style="display:none">OK</div>
+        </div>
+        <div class="profile-props">
+          <div class="prop-item"><div class="prop-label">W<sub>pl</sub> (cm³)</div><div class="prop-val" id="pr-wpl">--</div></div>
+          <div class="prop-item"><div class="prop-label">Momento Res. (kNm)</div><div class="prop-val" id="pr-mrd">--</div></div>
+          <div class="prop-item"><div class="prop-label">Cortante Res. (kN)</div><div class="prop-val" id="pr-vrd">--</div></div>
+          <div class="prop-item"><div class="prop-label">Área (cm²)</div><div class="prop-val" id="pr-area">--</div></div>
+          <div class="prop-item"><div class="prop-label">Peso (kg/m)</div><div class="prop-val" id="pr-kg">--</div></div>
+          <div class="prop-item"><div class="prop-label">I<sub>x</sub> (cm⁴)</div><div class="prop-val" id="pr-ix">--</div></div>
+        </div>
+        <div class="util-wrap">
+          <div class="util-label"><span>Taxa de Utilização à Flexão</span><span id="pr-util-pct">--</span></div>
+          <div class="util-bar-bg"><div class="util-bar-fill" id="pr-util-bar" style="width:0%;background:#4ade80;"></div></div>
+        </div>
+        <div class="util-wrap" style="padding-top:4px;">
+          <div class="util-label"><span>Taxa de Utilização ao Cisalhamento</span><span id="pr-util-pct-v">--</span></div>
+          <div class="util-bar-bg"><div class="util-bar-fill" id="pr-util-bar-v" style="width:0%;background:#38bdf8;"></div></div>
+        </div>
+      </div>
+
+      <!-- Profile table -->
+      <div class="profile-table-wrap">
+        <div class="pt-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="#64748b" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Perfis I Laminados — Catálogo Gerdau / Usiminas (ABNT NBR 11961)
+          <span style="margin-left:auto;font-size:.58rem;color:#22c55e;font-weight:700;">● Adequado</span>
+          <span style="margin-left:10px;font-size:.58rem;color:#ef4444;font-weight:700;">● Insuficiente</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="pt" id="profile-table">
+            <thead>
+              <tr>
+                <th>Perfil</th>
+                <th>h (mm)</th>
+                <th>bf (mm)</th>
+                <th>tw (mm)</th>
+                <th>tf (mm)</th>
+                <th>A (cm²)</th>
+                <th>kg/m</th>
+                <th>Ix (cm⁴)</th>
+                <th>Wpl (cm³)</th>
+                <th>M<sub>Rd</sub> (kNm)</th>
+                <th>V<sub>Rd</sub> (kN)</th>
+                <th>Verif.</th>
+              </tr>
+            </thead>
+            <tbody id="profile-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Norm reference -->
+      <div class="norm-box">
+        <div class="norm-box-title">📐 Base Normativa — NBR 8800:2008 · NBR 7007:2011</div>
+        <p>
+          <strong>Resistência à flexão:</strong> M<sub>Rd</sub> = W<sub>pl</sub> · f<sub>yd</sub> / γa₁ (Seção compacta, Classe 1 — NBR 8800 item 5.4).<br>
+          <strong>Resistência ao cisalhamento:</strong> V<sub>Rd</sub> = 0,6 · f<sub>yd</sub> · A<sub>w</sub> / γa₁ (NBR 8800 item 5.4.3), onde A<sub>w</sub> = h · tw.<br>
+          <strong>Graus de aço (NBR 7007):</strong> MR 250 (fy ≥ 250 MPa), MR 300 / VSM 300 (fy ≥ 300 MPa), AR 350 (fy ≥ 350 MPa), AR 400 (fy ≥ 400 MPa).<br>
+          <strong>Nota:</strong> Verificação simplificada para viga contínua lateralmente. Flambagem lateral-torsional deve ser verificada separadamente para vãos com contenções afastadas (NBR 8800 item 5.4.2).
+        </p>
+      </div>
+
+    </div>
   </div>
+</div>
 
+<!-- ══ PAGE 3: CARGAS ══ -->
+<div class="page" id="page-cargas">
+  <div class="cargas-intro"><strong>Referência de Cargas — NBR 6120:2019 e NBR 6118:2014.</strong> Use esta tabela para compor a carga adicional q_k no dimensionamento. Os valores são característicos (sem majoração). Aplique γf = 1,4 para cargas permanentes e γf = 1,4 a 1,6 para acidentais conforme NBR 6118 Tab. 1.</div>
   <div class="cargas-section-title">Cargas Permanentes — Peso Próprio de Componentes</div>
   <div class="cargas-grid">
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(56,189,248,0.1);color:#38bdf8;">🧱</div>
-        <div><div class="carga-card-title">Pisos e Regularização</div><div class="carga-card-subtitle">NBR 6120 — Seção 4</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Contrapiso de regularização (e=5cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">1,05 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Contrapiso de regularização (e=3cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,63 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Cerâmica + argamassa de assentamento</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,50 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Porcelanato + argamassa (e≈1,2cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,60 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Piso elevado (sistema câmara de ar)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,40 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Laje nervurada (estimativa típica)</span><span class="carga-nbr">—</span><span class="carga-val chip-blue">3,5–5,0 kN/m²</span></div>
-      </div>
-    </div>
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(251,191,36,0.1);color:#fbbf24;">🏗️</div>
-        <div><div class="carga-card-title">Paredes e Alvenaria</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.2</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Alvenaria de blocos cerâmicos (e=14cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">2,50 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Alvenaria de blocos cerâmicos (e=9cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">1,50 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Alvenaria de bloco de concreto (e=14cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">3,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Muro de contenção em alvenaria (h=2m)</span><span class="carga-nbr">—</span><span class="carga-val chip-amber">5,0–7,0 kN/m</span></div>
-        <div class="carga-row"><span class="carga-name">Parede de drywall simples</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">0,35 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Parede de vidro (cortina)</span><span class="carga-nbr">—</span><span class="carga-val chip-amber">0,60 kN/m²</span></div>
-      </div>
-    </div>
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(168,85,247,0.1);color:#c084fc;">🏠</div>
-        <div><div class="carga-card-title">Coberturas e Telhados</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.3</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Telha cerâmica + ripas + caibros</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,80 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Telha de fibrocimento (ondulada)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,15 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Telha metálica (painel sanduíche)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,10 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Laje impermeabilizada (cobertura plana)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">1,20 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Cobertura verde extensiva (substrato)</span><span class="carga-nbr">—</span><span class="carga-val chip-purple">1,5–3,0 kN/m²</span></div>
-      </div>
-    </div>
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(34,197,94,0.1);color:#4ade80;">🔧</div>
-        <div><div class="carga-card-title">Instalações e Revestimentos</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.4</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Revestimento de teto (argamassa 2cm)</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,42 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Forro de gesso (placas)</span><span class="carga-nbr">Tab. B.4</span><span class="carga-val chip-green">0,35 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Instalações hidráulicas (estimativa)</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,20 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Instalações elétricas e ar-cond.</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,10–0,30 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Impermeabilização + proteção mecânica</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,50 kN/m²</span></div>
-      </div>
-    </div>
-
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(56,189,248,.1);color:#38bdf8;">🧱</div><div><div class="carga-card-title">Pisos e Regularização</div><div class="carga-card-subtitle">NBR 6120 — Seção 4</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Contrapiso de regularização (e=5cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">1,05 kN/m²</span></div><div class="carga-row"><span class="carga-name">Contrapiso de regularização (e=3cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,63 kN/m²</span></div><div class="carga-row"><span class="carga-name">Cerâmica + argamassa de assentamento</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,50 kN/m²</span></div><div class="carga-row"><span class="carga-name">Porcelanato + argamassa (e≈1,2cm)</span><span class="carga-nbr">Tab. B.1</span><span class="carga-val chip-blue">0,60 kN/m²</span></div><div class="carga-row"><span class="carga-name">Laje nervurada (estimativa típica)</span><span class="carga-nbr">—</span><span class="carga-val chip-blue">3,5–5,0 kN/m²</span></div></div></div>
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(251,191,36,.1);color:#fbbf24;">🏗️</div><div><div class="carga-card-title">Paredes e Alvenaria</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.2</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Alvenaria blocos cerâmicos (e=14cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">2,50 kN/m²</span></div><div class="carga-row"><span class="carga-name">Alvenaria blocos cerâmicos (e=9cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">1,50 kN/m²</span></div><div class="carga-row"><span class="carga-name">Alvenaria bloco de concreto (e=14cm)</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">3,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Muro de contenção em alvenaria (h=2m)</span><span class="carga-nbr">—</span><span class="carga-val chip-amber">5,0–7,0 kN/m</span></div><div class="carga-row"><span class="carga-name">Parede de drywall simples</span><span class="carga-nbr">Tab. B.2</span><span class="carga-val chip-amber">0,35 kN/m²</span></div></div></div>
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(168,85,247,.1);color:#c084fc;">🏠</div><div><div class="carga-card-title">Coberturas e Telhados</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.3</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Telha cerâmica + ripas + caibros</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,80 kN/m²</span></div><div class="carga-row"><span class="carga-name">Telha de fibrocimento (ondulada)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,15 kN/m²</span></div><div class="carga-row"><span class="carga-name">Telha metálica (painel sanduíche)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">0,10 kN/m²</span></div><div class="carga-row"><span class="carga-name">Laje impermeabilizada (cobertura plana)</span><span class="carga-nbr">Tab. B.3</span><span class="carga-val chip-purple">1,20 kN/m²</span></div><div class="carga-row"><span class="carga-name">Cobertura verde extensiva (substrato)</span><span class="carga-nbr">—</span><span class="carga-val chip-purple">1,5–3,0 kN/m²</span></div></div></div>
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(34,197,94,.1);color:#4ade80;">🔧</div><div><div class="carga-card-title">Instalações e Revestimentos</div><div class="carga-card-subtitle">NBR 6120 — Seção 4.4</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Revestimento de teto (argamassa 2cm)</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,42 kN/m²</span></div><div class="carga-row"><span class="carga-name">Forro de gesso (placas)</span><span class="carga-nbr">Tab. B.4</span><span class="carga-val chip-green">0,35 kN/m²</span></div><div class="carga-row"><span class="carga-name">Instalações hidráulicas (estimativa)</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,20 kN/m²</span></div><div class="carga-row"><span class="carga-name">Impermeabilização + proteção mecânica</span><span class="carga-nbr">—</span><span class="carga-val chip-green">0,50 kN/m²</span></div></div></div>
   </div>
-
-  <div class="cargas-section-title" style="margin-top:24px;">Cargas Acidentais — Uso e Ocupação</div>
+  <div class="cargas-section-title">Cargas Acidentais — Uso e Ocupação</div>
   <div class="cargas-grid">
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(239,68,68,0.1);color:#f87171;">🏢</div>
-        <div><div class="carga-card-title">Edificações Residenciais e Comerciais</div><div class="carga-card-subtitle">NBR 6120 — Tabela 1</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Dormitórios e salas residenciais</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">1,50 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Cozinhas e banheiros residenciais</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">2,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Escritórios (uso geral)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">2,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Lojas e comércio em geral</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">3,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Corredores e escadas residenciais</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">2,50 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Corredores e escadas coletivos</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">3,00 kN/m²</span></div>
-      </div>
-    </div>
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(251,146,60,0.1);color:#fb923c;">🏭</div>
-        <div><div class="carga-card-title">Uso Especial e Industrial</div><div class="carga-card-subtitle">NBR 6120 — Tabela 1</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Garagens para veículos leves</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">3,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Garagens para veículos pesados</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">5,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Hospitais — enfermarias</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">2,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Arquivos e bibliotecas (estante fixa)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">6,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Depósitos e armazéns (uso geral)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">4,00–8,00 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Coberturas acessíveis (terraço)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">2,00 kN/m²</span></div>
-      </div>
-    </div>
-
-    <div class="carga-card">
-      <div class="carga-card-header">
-        <div class="carga-card-icon" style="background:rgba(56,189,248,0.1);color:#38bdf8;">💧</div>
-        <div><div class="carga-card-title">Ações do Vento e Empuxos</div><div class="carga-card-subtitle">NBR 6120 / NBR 6122</div></div>
-      </div>
-      <div class="carga-card-body">
-        <div class="carga-row"><span class="carga-name">Empuxo de terra (solo argiloso típico)</span><span class="carga-nbr">NBR 6122</span><span class="carga-val chip-blue">Ka × γ × h</span></div>
-        <div class="carga-row"><span class="carga-name">Pressão hidrostática de água</span><span class="carga-nbr">—</span><span class="carga-val chip-blue">10 kN/m³ × h</span></div>
-        <div class="carga-row"><span class="carga-name">Carga de vento (estimativa básica)</span><span class="carga-nbr">NBR 6123</span><span class="carga-val chip-blue">0,5–1,5 kN/m²</span></div>
-        <div class="carga-row"><span class="carga-name">Carga de neve (regiões Sul — rara)</span><span class="carga-nbr">NBR 6120</span><span class="carga-val chip-blue">0,25–1,00 kN/m²</span></div>
-      </div>
-    </div>
-
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(239,68,68,.1);color:#f87171;">🏢</div><div><div class="carga-card-title">Residencial e Comercial</div><div class="carga-card-subtitle">NBR 6120 — Tabela 1</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Dormitórios e salas residenciais</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">1,50 kN/m²</span></div><div class="carga-row"><span class="carga-name">Cozinhas e banheiros residenciais</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">2,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Escritórios (uso geral)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">2,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Lojas e comércio em geral</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">3,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Corredores e escadas coletivos</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-red">3,00 kN/m²</span></div></div></div>
+    <div class="carga-card"><div class="carga-card-header"><div class="carga-card-icon" style="background:rgba(251,146,60,.1);color:#fb923c;">🏭</div><div><div class="carga-card-title">Uso Especial e Industrial</div><div class="carga-card-subtitle">NBR 6120 — Tabela 1</div></div></div><div class="carga-card-body"><div class="carga-row"><span class="carga-name">Garagens para veículos leves</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">3,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Garagens para veículos pesados</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">5,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Arquivos e bibliotecas (estante fixa)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">6,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Depósitos e armazéns (uso geral)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">4,00–8,00 kN/m²</span></div><div class="carga-row"><span class="carga-name">Coberturas acessíveis (terraço)</span><span class="carga-nbr">Tab. 1</span><span class="carga-val chip-orange">2,00 kN/m²</span></div></div></div>
   </div>
-
-  <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:14px 18px;margin-top:20px;font-size:0.68rem;color:#94a3b8;line-height:1.7;">
-    <strong style="color:#4ade80;">💡 Dica de uso no dimensionamento:</strong> Para converter carga de laje (kN/m²) em carga linear sobre a viga (kN/m), multiplique pelo <strong style="color:#fff;">vão de influência tributário</strong> da laje. Exemplo: laje de 4,0m com q=3,0kN/m² → viga recebe 3,0 × (4,0/2) = <strong style="color:#4ade80;">6,0 kN/m</strong> de um lado.
+  <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:14px 18px;margin-top:18px;font-size:.68rem;color:#94a3b8;line-height:1.7;">
+    <strong style="color:#4ade80;">💡 Conversão kN/m² → kN/m:</strong> Multiplique pelo vão tributário da laje. Exemplo: laje de 4,0m com q=3,0kN/m² → viga recebe 3,0 × (4,0/2) = <strong style="color:#4ade80;">6,0 kN/m</strong> de um lado.
   </div>
-</div><!-- /page-cargas -->
+</div>
 
-<footer>Simulador Dinâmico de Vigas Biapoiadas &copy; 2026 — Didática Avançada de Estruturas de Concreto II — Prof. Dr. Alexandre Moura</footer>
+<footer>Simulador Dinâmico de Vigas Biapoiadas &copy; 2026 — NBR 6118 · NBR 8800 · NBR 7007 — Prof. Dr. Alexandre Moura</footer>
 
 <script>
+// ── PROFILE DATABASE (Gerdau/Usiminas catalog - ABNT NBR 11961)
+// h(mm), bf(mm), tw(mm), tf(mm), A(cm²), kg/m, Ix(cm⁴), Wpl(cm³)
+const PROFILES = [
+  {n:"W 150x13",  h:148, bf:100, tw:4.3, tf:4.9,  A:16.8,  kg:13.2, Ix:688,    Wpl:102},
+  {n:"W 150x18",  h:153, bf:102, tw:5.8, tf:7.1,  A:23.2,  kg:18.2, Ix:919,    Wpl:138},
+  {n:"W 150x22",  h:152, bf:152, tw:5.8, tf:6.6,  A:28.3,  kg:22.2, Ix:1120,   Wpl:166},
+  {n:"W 200x22",  h:206, bf:102, tw:6.2, tf:8.0,  A:28.1,  kg:22.1, Ix:1950,   Wpl:213},
+  {n:"W 200x27",  h:203, bf:133, tw:6.4, tf:8.0,  A:34.4,  kg:27.0, Ix:2480,   Wpl:272},
+  {n:"W 200x36",  h:201, bf:165, tw:6.2, tf:10.2, A:45.7,  kg:35.9, Ix:3440,   Wpl:379},
+  {n:"W 200x46",  h:203, bf:203, tw:7.2, tf:11.0, A:58.8,  kg:46.1, Ix:4530,   Wpl:499},
+  {n:"W 250x25",  h:257, bf:102, tw:6.1, tf:8.4,  A:32.0,  kg:25.1, Ix:3870,   Wpl:338},
+  {n:"W 250x33",  h:259, bf:146, tw:6.1, tf:9.1,  A:41.8,  kg:32.8, Ix:4940,   Wpl:425},
+  {n:"W 250x49",  h:247, bf:202, tw:7.4, tf:11.0, A:62.6,  kg:49.1, Ix:7080,   Wpl:638},
+  {n:"W 250x73",  h:253, bf:254, tw:8.6, tf:14.2, A:92.9,  kg:72.9, Ix:11400,  Wpl:1000},
+  {n:"W 310x32",  h:313, bf:102, tw:6.6, tf:8.9,  A:40.8,  kg:32.0, Ix:7070,   Wpl:509},
+  {n:"W 310x39",  h:310, bf:165, tw:5.8, tf:9.7,  A:49.4,  kg:38.8, Ix:8470,   Wpl:623},
+  {n:"W 310x52",  h:317, bf:167, tw:7.6, tf:13.2, A:66.5,  kg:52.2, Ix:12400,  Wpl:881},
+  {n:"W 310x67",  h:306, bf:254, tw:8.5, tf:13.1, A:85.8,  kg:67.3, Ix:15000,  Wpl:1100},
+  {n:"W 310x97",  h:308, bf:305, tw:9.9, tf:15.4, A:124.0, kg:97.4, Ix:22200,  Wpl:1600},
+  {n:"W 360x39",  h:353, bf:128, tw:6.5, tf:10.7, A:49.9,  kg:39.2, Ix:10200,  Wpl:654},
+  {n:"W 360x51",  h:355, bf:171, tw:7.2, tf:11.5, A:64.9,  kg:50.9, Ix:14100,  Wpl:894},
+  {n:"W 360x64",  h:347, bf:203, tw:7.7, tf:13.5, A:81.2,  kg:63.8, Ix:17900,  Wpl:1150},
+  {n:"W 360x79",  h:354, bf:205, tw:9.4, tf:16.8, A:101.0, kg:79.3, Ix:22900,  Wpl:1460},
+  {n:"W 360x101", h:357, bf:254, tw:10.8,tf:18.3, A:129.0, kg:101,  Ix:30100,  Wpl:1890},
+  {n:"W 410x46",  h:403, bf:140, tw:7.0, tf:11.2, A:58.7,  kg:46.1, Ix:15600,  Wpl:874},
+  {n:"W 410x60",  h:407, bf:178, tw:7.7, tf:12.8, A:75.9,  kg:59.6, Ix:21600,  Wpl:1200},
+  {n:"W 410x85",  h:417, bf:181, tw:10.9,tf:18.2, A:108.0, kg:84.8, Ix:31500,  Wpl:1700},
+  {n:"W 410x114", h:420, bf:261, tw:11.6,tf:19.3, A:145.0, kg:114,  Ix:46200,  Wpl:2480},
+  {n:"W 460x52",  h:450, bf:152, tw:7.6, tf:10.8, A:66.5,  kg:52.2, Ix:21200,  Wpl:1040},
+  {n:"W 460x68",  h:459, bf:154, tw:9.1, tf:15.4, A:86.7,  kg:68.1, Ix:29400,  Wpl:1440},
+  {n:"W 460x89",  h:463, bf:192, tw:10.5,tf:17.7, A:114.0, kg:89.3, Ix:41000,  Wpl:2000},
+  {n:"W 530x66",  h:526, bf:165, tw:8.9, tf:11.4, A:83.5,  kg:65.5, Ix:35100,  Wpl:1500},
+  {n:"W 530x85",  h:535, bf:166, tw:10.2,tf:16.5, A:108.0, kg:84.8, Ix:48200,  Wpl:2030},
+  {n:"W 610x82",  h:599, bf:178, tw:10.0,tf:12.8, A:105.0, kg:82.4, Ix:56200,  Wpl:2110},
+  {n:"W 610x101", h:603, bf:228, tw:10.5,tf:14.9, A:129.0, kg:101,  Ix:75600,  Wpl:2780},
+  {n:"W 610x140", h:617, bf:230, tw:13.1,tf:22.2, A:178.0, kg:140,  Ix:112000, Wpl:4140},
+];
+
+let globalMsd = 0, globalVsd = 0, globalL = 5;
+let selectedProfile = null;
+let currentFyd = 300 / 1.10;
+
 const $ = id => document.getElementById(id);
 
-function showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
-  $('page-' + id).classList.add('active');
-  btn.classList.add('active');
-}
-
-function sync(sliderId, inputId) {
-  const sl = $(sliderId), ip = $(inputId);
+// ── SLIDER SYNC
+function sync(sId, iId) {
+  const sl = $(sId), ip = $(iId);
   sl.addEventListener('input', () => { ip.value = parseFloat(sl.value).toFixed(sl.step < 1 ? 1 : 0); calculate(); });
   ip.addEventListener('input', () => { sl.value = ip.value; calculate(); });
 }
-sync('slider-L', 'input-L');
-sync('slider-q', 'input-q');
+sync('slider-L','input-L');
+sync('slider-q','input-q');
 ['input-bw','input-h','input-cnom','input-fck','input-fyk-shear'].forEach(id => $(id).addEventListener('change', calculate));
 ['input-bw','input-h','input-cnom'].forEach(id => $(id).addEventListener('input', calculate));
 
+// ── MAIN CALCULATE
 function calculate() {
   const L = parseFloat($('input-L').value) || 5;
   const qk = parseFloat($('input-q').value) || 0;
@@ -479,13 +563,13 @@ function calculate() {
   const fck = parseFloat($('input-fck').value) || 25;
   const fyk_s = parseFloat($('input-fyk-shear').value) || 600;
 
-  // Peso próprio: bw(m) × h(m) × 25 kN/m³
-  const gpp = (bw / 100) * (h / 100) * 25;
-  const qd = 1.4 * (qk + gpp);
-  const Msd = qd * L * L / 8;
-  const Vsd = qd * L / 2;
+  const gpp = (bw/100)*(h/100)*25;
+  const qd = 1.4*(qk+gpp);
+  const Msd = qd*L*L/8;
+  const Vsd = qd*L/2;
 
-  // KPIs
+  globalMsd = Msd; globalVsd = Vsd; globalL = L;
+
   $('pp-display').textContent = gpp.toFixed(2);
   $('kpi-pp').innerHTML = `${gpp.toFixed(2)} <span class="kpi-unit">kN/m</span>`;
   $('kpi-qk').innerHTML = `${qk.toFixed(2)} <span class="kpi-unit">kN/m</span>`;
@@ -494,92 +578,213 @@ function calculate() {
   $('res-vsd').innerHTML = `${Vsd.toFixed(1)} <span class="kpi-unit">kN</span>`;
 
   // Flexion
-  const fcd = (fck / 10) / 1.4;
-  const fyd = 50 / 1.15;
+  const fcd = (fck/10)/1.4, fyd = 50/1.15;
   const d = h - cnom - 0.5 - 0.8;
-  const Msd_cm = Msd * 100;
-  const mu = Msd_cm / (bw * d * d * fcd);
+  const Msd_cm = Msd*100;
+  const mu = Msd_cm/(bw*d*d*fcd);
+  let xi=0, z=d, As_calc=0, warns=[];
+  if(mu<0.5){xi=1-Math.sqrt(1-2*mu);z=d*(1-0.4*xi);As_calc=Msd_cm/(fyd*z);}
+  else warns.push("Colapso por esmagamento do concreto! Aumente h ou bw.");
+  if(xi>0.45) warns.push(`Ductilidade insuficiente (x/d=${xi.toFixed(3)}>0,45). Exige armadura dupla ou aumento de h.`);
 
-  let xi = 0, z = d, As_calc = 0, warns = [];
-  if (mu < 0.5) { xi = 1 - Math.sqrt(1 - 2 * mu); z = d * (1 - 0.4 * xi); As_calc = Msd_cm / (fyd * z); }
-  else { warns.push("Colapso por esmagamento do concreto comprimido! Aumente h ou bw."); }
-  if (xi > 0.45) warns.push(`Ductilidade insuficiente (x/d = ${xi.toFixed(3)} > 0,45). Exige armadura dupla ou aumento de h.`);
+  const rho_min = fck<=30?0.0015:fck<=35?0.00164:fck<=40?0.00179:0.00208;
+  const As_min = rho_min*bw*h, As_real = Math.max(As_calc,As_min);
+  let phi_l=12.5, abl=1.227;
+  if(As_real<2.0){phi_l=10;abl=0.785;} else if(As_real>6.0){phi_l=16;abl=2.01;} else if(As_real>12.0){phi_l=20;abl=3.14;}
+  const nb=Math.ceil(As_real/abl);
+  $('det-inf').textContent=`${nb}x Ø${phi_l.toFixed(1)}mm (${As_real.toFixed(2)}cm²)`;
+  $('det-sup').textContent=`2x Ø${bw<=12?'6.3':'8.0'}mm`;
+  let pele_txt="Não exigida (h≤60cm)";
+  if(h>60){const Asp=0.001*bw*h;const np=Math.ceil(Asp/2/0.312)*2;pele_txt=`${np}x Ø6.3mm (${Asp.toFixed(2)}cm²)`;}
+  $('det-pele').textContent=pele_txt;
 
-  const rho_min = fck <= 30 ? 0.0015 : fck <= 35 ? 0.00164 : fck <= 40 ? 0.00179 : 0.00208;
-  const As_min = rho_min * bw * h;
-  const As_real = Math.max(As_calc, As_min);
-
-  let phi_l = 12.5, abl = 1.227;
-  if (As_real < 2.0) { phi_l = 10; abl = 0.785; }
-  else if (As_real > 6.0) { phi_l = 16; abl = 2.01; }
-  else if (As_real > 12.0) { phi_l = 20; abl = 3.14; }
-  const nb = Math.ceil(As_real / abl);
-  $('det-inf').textContent = `${nb}x Ø${phi_l.toFixed(1)}mm (${As_real.toFixed(2)}cm²)`;
-  $('det-sup').textContent = `2x Ø${bw <= 12 ? '6.3' : '8.0'}mm`;
-
-  let pele_txt = "Não exigida (h ≤ 60cm)";
-  if (h > 60) { const Asp = 0.001 * bw * h; const np = Math.ceil(Asp / 2 / 0.312) * 2; pele_txt = `${np}x Ø6.3mm (${Asp.toFixed(2)}cm²)`; }
-  $('det-pele').textContent = pele_txt;
-
-  const av2 = 1 - fck / 250;
-  const Vrd2 = 0.27 * av2 * fcd * bw * d;
-  if (Vsd > Vrd2) warns.push(`Esmagamento da biela! (Vsd=${Vsd.toFixed(1)}kN > Vrd2=${Vrd2.toFixed(1)}kN). Aumente bw ou fck.`);
-
-  const fctm = 0.3 * Math.pow(fck, 2 / 3);
-  const fctd = (0.7 * fctm / 10) / 1.4;
-  const Vc = 0.6 * fctd * bw * d;
-  const Vsw = Math.max(0, Vsd - Vc);
-  const fywd = (fyk_s / 10) / 1.15;
-  const Asws = Math.max((Vsw / (0.9 * d * fywd)) * 100, 0.2 * (fctm / fyk_s) * bw * 100);
-
-  let phi_e = 5.0, are = 0.196;
-  if (Asws > 4.5) { phi_e = 6.3; are = 0.312; }
-  else if (Asws > 8.0) { phi_e = 8.0; are = 0.503; }
-  const Asw = 2 * are;
-  let s_calc = (Asw / Asws) * 100;
-  const s_max = Vsd <= 0.67 * Vrd2 ? Math.min(0.6 * d, 30) : Math.min(0.3 * d, 20);
-  const s_fin = Math.min(s_calc, s_max);
-  $('det-estribo').textContent = `Ø${phi_e.toFixed(1)}mm c/ ${s_fin.toFixed(1)}cm`;
+  const av2=1-fck/250, Vrd2=0.27*av2*fcd*bw*d;
+  if(Vsd>Vrd2) warns.push(`Esmagamento da biela! (Vsd=${Vsd.toFixed(1)}kN>Vrd2=${Vrd2.toFixed(1)}kN). Aumente bw ou fck.`);
+  const fctm=0.3*Math.pow(fck,2/3), fctd=(0.7*fctm/10)/1.4;
+  const Vc=0.6*fctd*bw*d, Vsw=Math.max(0,Vsd-Vc);
+  const fywd=(fyk_s/10)/1.15;
+  const Asws=Math.max((Vsw/(0.9*d*fywd))*100, 0.2*(fctm/fyk_s)*bw*100);
+  let phi_e=5.0,are=0.196;
+  if(Asws>4.5){phi_e=6.3;are=0.312;} else if(Asws>8.0){phi_e=8.0;are=0.503;}
+  const Asw=2*are;
+  let s_calc=(Asw/Asws)*100;
+  const s_max=Vsd<=0.67*Vrd2?Math.min(0.6*d,30):Math.min(0.3*d,20);
+  $('det-estribo').textContent=`Ø${phi_e.toFixed(1)}mm c/ ${Math.min(s_calc,s_max).toFixed(1)}cm`;
 
   // SVG
-  $('svg-text-h').textContent = `h = ${h.toFixed(0)} cm`;
-  const sh = 40 + (h / 100) * 80;
-  const vy = 130 - sh;
-  $('svg-viga').setAttribute('height', sh);
-  $('svg-viga').setAttribute('y', vy);
-  $('svg-rebar-sup').setAttribute('y1', vy + 8);
-  $('svg-rebar-sup').setAttribute('y2', vy + 8);
+  $('svg-text-h').textContent=`h = ${h.toFixed(0)} cm`;
+  const sh=40+(h/100)*80, vy=130-sh;
+  $('svg-viga').setAttribute('height',sh); $('svg-viga').setAttribute('y',vy);
+  $('svg-rebar-sup').setAttribute('y1',vy+8); $('svg-rebar-sup').setAttribute('y2',vy+8);
+  let est='';
+  const nc=Math.min(25,Math.ceil(400/Math.min(s_calc,s_max)));
+  const sx=400/(nc-1||1);
+  for(let i=0;i<nc;i++) est+=`<line x1="${50+i*sx}" y1="${vy+8}" x2="${50+i*sx}" y2="122"/>`;
+  $('svg-estribos').innerHTML=est;
+  let pk='';
+  if(h>60){const sp=(sh-16)/3;pk+=`<line x1="58" y1="${vy+8+sp}" x2="442" y2="${vy+8+sp}"/><line x1="58" y1="${vy+8+2*sp}" x2="442" y2="${vy+8+2*sp}"/>`;}
+  $('svg-rebar-pele').innerHTML=pk;
 
-  let est = '';
-  const nc = Math.min(25, Math.ceil(400 / s_fin));
-  const sx = 400 / (nc - 1 || 1);
-  for (let i = 0; i < nc; i++) est += `<line x1="${50 + i * sx}" y1="${vy + 8}" x2="${50 + i * sx}" y2="122"/>`;
-  $('svg-estribos').innerHTML = est;
+  const ab=$('alert-box');
+  if(warns.length){ab.style.display='block';$('alert-text').innerHTML=warns.map(w=>`• ${w}`).join('<br>');}
+  else ab.style.display='none';
 
-  let pk = '';
-  if (h > 60) { const sp = (sh - 16) / 3; pk += `<line x1="58" y1="${vy+8+sp}" x2="442" y2="${vy+8+sp}"/><line x1="58" y1="${vy+8+2*sp}" x2="442" y2="${vy+8+2*sp}"/>`; }
-  $('svg-rebar-pele').innerHTML = pk;
+  $('eq-pp').innerHTML=`\\( g_{pp}=${(bw/100).toFixed(2)}\\times${(h/100).toFixed(2)}\\times25=${gpp.toFixed(2)}\\,\\text{kN/m}\\quad;\\quad q_d=1{,}4\\cdot(${qk.toFixed(2)}+${gpp.toFixed(2)})=${qd.toFixed(2)}\\,\\text{kN/m} \\)`;
+  $('eq-esforcos').innerHTML=`\\( M_{Sd}=\\frac{${qd.toFixed(2)}\\cdot${L.toFixed(1)}^2}{8}=${Msd.toFixed(1)}\\,\\text{kNm}\\quad;\\quad V_{Sd}=\\frac{${qd.toFixed(2)}\\cdot${L.toFixed(1)}}{2}=${Vsd.toFixed(1)}\\,\\text{kN} \\)`;
+  $('eq-xi').innerHTML=`\\( \\mu=${mu.toFixed(3)}\\rightarrow\\xi=${xi.toFixed(3)}\\quad(x=${(xi*d).toFixed(2)}\\,\\text{cm}) \\)`;
+  $('eq-as').innerHTML=`\\( A_{s,calc}=${As_calc.toFixed(2)}\\,\\text{cm}^2\\rightarrow A_{s,real}=${As_real.toFixed(2)}\\,\\text{cm}^2 \\)`;
+  $('eq-sw').innerHTML=`\\( V_{Rd2}=${Vrd2.toFixed(1)}\\,\\text{kN}\\quad;\\quad V_c=${Vc.toFixed(1)}\\,\\text{kN}\\rightarrow\\left(\\frac{A_{sw}}{s}\\right)=${Asws.toFixed(2)}\\,\\text{cm}^2/\\text{m} \\)`;
+  if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
 
-  // Alerts
-  const ab = $('alert-box');
-  if (warns.length) { ab.style.display = 'block'; $('alert-text').innerHTML = warns.map(w => `• ${w}`).join('<br>'); }
-  else ab.style.display = 'none';
-
-  // Equations
-  $('eq-pp').innerHTML = `\\( g_{pp} = ${(bw/100).toFixed(2)} \\times ${(h/100).toFixed(2)} \\times 25 = ${gpp.toFixed(2)}\\,\\text{kN/m} \\quad;\\quad q_d = 1{,}4 \\cdot (${qk.toFixed(2)} + ${gpp.toFixed(2)}) = ${qd.toFixed(2)}\\,\\text{kN/m} \\)`;
-  $('eq-esforcos').innerHTML = `\\( M_{Sd}=\\frac{${qd.toFixed(2)}\\cdot${L.toFixed(1)}^2}{8}=${Msd.toFixed(1)}\\,\\text{kNm}\\quad;\\quad V_{Sd}=\\frac{${qd.toFixed(2)}\\cdot${L.toFixed(1)}}{2}=${Vsd.toFixed(1)}\\,\\text{kN} \\)`;
-  $('eq-xi').innerHTML = `\\( \\mu=${mu.toFixed(3)}\\rightarrow\\xi=${xi.toFixed(3)}\\quad(x=${(xi*d).toFixed(2)}\\,\\text{cm}) \\)`;
-  $('eq-as').innerHTML = `\\( A_{s,calc}=${As_calc.toFixed(2)}\\,\\text{cm}^2\\rightarrow A_{s,real}=\\max(${As_calc.toFixed(2)},${As_min.toFixed(2)})=${As_real.toFixed(2)}\\,\\text{cm}^2 \\)`;
-  $('eq-sw').innerHTML = `\\( V_{Rd2}=${Vrd2.toFixed(1)}\\,\\text{kN}\\quad;\\quad V_c=${Vc.toFixed(1)}\\,\\text{kN}\\rightarrow\\left(\\frac{A_{sw}}{s}\\right)=${Asws.toFixed(2)}\\,\\text{cm}^2/\\text{m} \\)`;
-
-  if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+  // Update steel page
+  updateSteel();
 }
 
-function switchInner(t, btn) {
-  document.querySelectorAll('.inner-tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.inner-pane').forEach(p => p.classList.remove('active'));
+// ── STEEL PAGE
+function updateSteel() {
+  const fy = parseFloat($('st-grade').value) || 300;
+  const fyd = fy / 1.10; // kN/cm² → MPa: divide by 10 for kN/cm²
+  currentFyd = fyd;
+  $('st-fyd-display').textContent = `${fyd.toFixed(1)} MPa`;
+
+  const Msd = globalMsd; // kNm
+  const Vsd = globalVsd; // kN
+  const L = globalL;
+
+  $('st-msd').textContent = `${Msd.toFixed(1)} kNm`;
+  $('st-vsd').textContent = `${Vsd.toFixed(1)} kN`;
+  $('st-L').textContent = `${L.toFixed(1)} m`;
+
+  // W_pl required (cm³): Msd in kNm → ×100 = kN·cm; fyd in MPa = kN/cm² × 10
+  const fyd_kNcm2 = fyd / 100; // MPa → kN/cm²
+  const Wpl_req = (Msd * 100) / fyd_kNcm2; // cm³
+  $('st-wpl').textContent = `${Wpl_req.toFixed(0)} cm³`;
+
+  // Build table
+  const tbody = $('profile-tbody');
+  tbody.innerHTML = '';
+  PROFILES.forEach((p, idx) => {
+    // Mrd: Wpl * fyd_kNcm2 / 100 → kNm
+    const Mrd = (p.Wpl * fyd_kNcm2) / 100; // kNm
+    // Vrd: 0.6 * fyd * Aw;  Aw = h*tw (cm²)
+    const Aw = (p.h / 10) * (p.tw / 10); // cm²
+    const Vrd = 0.6 * fyd_kNcm2 * Aw / 10; // kN  (fyd_kNcm2 in kN/cm², Aw in cm² → kN; /10 because h in mm→cm already done)
+    // Correct: fyd in kN/cm², Aw in cm² → kN directly
+    const Vrd2 = 0.6 * fyd_kNcm2 * Aw; // kN
+    const ok_m = Mrd >= Msd;
+    const ok_v = Vrd2 >= Vsd;
+    const ok = ok_m && ok_v;
+
+    const tr = document.createElement('tr');
+    tr.className = ok ? 'suitable' : 'unsuitable';
+    if(selectedProfile && selectedProfile.n === p.n) tr.classList.add('selected');
+    tr.innerHTML = `
+      <td>${p.n}</td>
+      <td>${p.h}</td>
+      <td>${p.bf}</td>
+      <td>${p.tw}</td>
+      <td>${p.tf}</td>
+      <td>${p.A.toFixed(1)}</td>
+      <td>${p.kg.toFixed(1)}</td>
+      <td>${p.Ix.toLocaleString('pt-BR')}</td>
+      <td>${p.Wpl.toLocaleString('pt-BR')}</td>
+      <td>${Mrd.toFixed(1)}</td>
+      <td>${Vrd2.toFixed(1)}</td>
+      <td><span class="chip ${ok?'chip-ok':'chip-no'}">${ok?'✔ OK':'✘ NÃO'}</span></td>
+    `;
+    tr.addEventListener('click', () => selectProfile(p, Mrd, Vrd2));
+    tbody.appendChild(tr);
+  });
+
+  // Auto-select first suitable profile
+  const firstOk = PROFILES.find(p => {
+    const Mrd = (p.Wpl * fyd_kNcm2) / 100;
+    const Aw = (p.h/10)*(p.tw/10);
+    const Vrd2 = 0.6*fyd_kNcm2*Aw;
+    return Mrd >= Msd && Vrd2 >= Vsd;
+  });
+  if(firstOk && (!selectedProfile || !PROFILES.find(p => p.n===selectedProfile.n && (p.Wpl*fyd_kNcm2/100)>=Msd))) {
+    const Mrd = (firstOk.Wpl*fyd_kNcm2)/100;
+    const Aw = (firstOk.h/10)*(firstOk.tw/10);
+    selectProfile(firstOk, Mrd, 0.6*fyd_kNcm2*Aw);
+  } else if(selectedProfile) {
+    const p = selectedProfile;
+    const Mrd = (p.Wpl*fyd_kNcm2)/100;
+    const Aw=(p.h/10)*(p.tw/10);
+    selectProfile(p, Mrd, 0.6*fyd_kNcm2*Aw);
+  }
+}
+
+function selectProfile(p, Mrd, Vrd) {
+  selectedProfile = p;
+  const fyd_kNcm2 = currentFyd / 100;
+  const Msd = globalMsd, Vsd = globalVsd;
+
+  // Highlight row
+  document.querySelectorAll('#profile-tbody tr').forEach(r => r.classList.remove('selected'));
+  const rows = document.querySelectorAll('#profile-tbody tr');
+  rows.forEach(r => { if(r.cells[0] && r.cells[0].textContent === p.n) r.classList.add('selected'); });
+
+  $('pr-name').textContent = p.n;
+  $('pr-name').style.color = (Mrd>=Msd&&Vrd>=Vsd)?'#4ade80':'#f87171';
+  $('pr-wpl').textContent = p.Wpl.toLocaleString('pt-BR');
+  $('pr-mrd').textContent = Mrd.toFixed(1);
+  $('pr-vrd').textContent = Vrd.toFixed(1);
+  $('pr-area').textContent = p.A.toFixed(1);
+  $('pr-kg').textContent = p.kg.toFixed(1);
+  $('pr-ix').textContent = p.Ix.toLocaleString('pt-BR');
+
+  const ok = Mrd>=Msd && Vrd>=Vsd;
+  const stEl = $('pr-status');
+  stEl.style.display='block';
+  stEl.textContent = ok ? '✔ APROVADO' : '✘ INSUFICIENTE';
+  stEl.className = 'profile-status ' + (ok?'status-ok':'status-fail');
+
+  // Util bars
+  const util_m = Math.min((Msd/Mrd)*100, 120);
+  const util_v = Math.min((Vsd/Vrd)*100, 120);
+  const bar_m = $('pr-util-bar'), bar_v = $('pr-util-bar-v');
+  bar_m.style.width = util_m+'%';
+  bar_m.style.background = util_m<=80?'#4ade80':util_m<=100?'#fbbf24':'#ef4444';
+  $('pr-util-pct').textContent = (Msd/Mrd*100).toFixed(1)+'%';
+  bar_v.style.width = util_v+'%';
+  bar_v.style.background = util_v<=80?'#38bdf8':util_v<=100?'#fbbf24':'#ef4444';
+  $('pr-util-pct-v').textContent = (Vsd/Vrd*100).toFixed(1)+'%';
+
+  // Update I-beam SVG
+  const svgH = 120, svgBf = 100, pad = 10;
+  const scaleH = (svgH) / (p.h/10);
+  const scaleBf = (svgBf) / (p.bf/10);
+  const tfPx = Math.max(3, (p.tf/10)*scaleH);
+  const twPx = Math.max(2, (p.tw/10)*scaleBf);
+  const webH = svgH - 2*tfPx;
+  const bfPx = svgBf;
+  const cx = 60, startY = pad;
+  const bfX = cx - bfPx/2;
+  const twX = cx - twPx/2;
+  const isvg = $('ibeam-svg');
+  isvg.innerHTML = `
+    <rect x="${bfX}" y="${startY}" width="${bfPx}" height="${tfPx}" rx="1.5" fill="#334155" stroke="#64748b" stroke-width="1.2"/>
+    <rect x="${twX}" y="${startY+tfPx}" width="${twPx}" height="${webH}" fill="#1e293b" stroke="#64748b" stroke-width="1.2"/>
+    <rect x="${bfX}" y="${startY+tfPx+webH}" width="${bfPx}" height="${tfPx}" rx="1.5" fill="#334155" stroke="#64748b" stroke-width="1.2"/>
+    <text x="${cx}" y="${startY-2}" fill="#475569" font-size="8" text-anchor="middle">bf=${p.bf}mm</text>
+    <text x="${bfX-4}" y="${startY+svgH/2+4}" fill="#475569" font-size="8" text-anchor="end">h=${p.h}mm</text>
+  `;
+  $('ibeam-profile-name').textContent = p.n;
+  $('ibeam-dims').innerHTML = `h=${p.h}mm &nbsp;|&nbsp; bf=${p.bf}mm &nbsp;|&nbsp; tw=${p.tw}mm &nbsp;|&nbsp; tf=${p.tf}mm<br>A=${p.A}cm² &nbsp;·&nbsp; ${p.kg}kg/m &nbsp;·&nbsp; Ix=${p.Ix.toLocaleString('pt-BR')}cm⁴`;
+}
+
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+  $('page-'+id).classList.add('active');
   btn.classList.add('active');
-  $('pane-' + t).classList.add('active');
+}
+function switchInner(t, btn) {
+  document.querySelectorAll('.inner-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.inner-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  $('pane-'+t).classList.add('active');
 }
 
 window.onload = calculate;
